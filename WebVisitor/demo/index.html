@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> SimpleModal OSX Style Dialog </title>
+<meta name='author' content='Eric Martin' />
+<meta name='copyright' content='2013 - Eric Martin' />
+
+<!-- Page styles -->
+<link type='text/css' href='css/demo.css' rel='stylesheet' media='screen' />
+
+<!-- OSX Style CSS files -->
+<link type='text/css' href='css/osx.css' rel='stylesheet' media='screen' />
+<!-- JS files are loaded at the bottom of the page -->
+</head>
+<body>
+<div id='container'>
+<div id='logo'>
+<h1>Simple<span>Submitter</span></h1>
+<span class='title'>Free Website Submitter</span></div>
+<div id='content'>
+<div id='osx-modal'>
+<h3>The video autoplay attribute</h3>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<video controls loop` autoplay muted id="videoId" frameborder="0" allow="picture-in-picture" allowfullscreen>
+<source src="css/Ed_Sheeran.mp4" type="video/mp4">
+<source src="css/Ed_Sheeran.ogg" type="video/ogg">
+</video>
+<p>More Tools <a href="index2.html" ">Fast Traffic</a> | <a href='index3.html'>Web Ping</a>. | Inspired by <a href="https://github.com/ericmmartin/simplemodal" >ModalBox</a>, an OSX style dialog built with <a href='http://www.prototypejs.org/ '>prototype</a>.</p>
+<input type='button' name='osx' value='Ping Url' class='osx demo'/> or <a href="https://github.com/alfazzafashion/smallseo" alt="smallseo">Fork on Github</a>.
+</div>
+<!-- modal content -->
+<div id='osx-modal-content'>
+<div id='osx-modal-title'>Website Submitter Dialog </div>
+<div class='close'><a href='#' class='simplemodal-close'>Close</a></div>
+<div id='osx-modal-data'>
+<p>Enter Domain (without http:// or https://)</p>
+<input type='text' name='domain' class='js-sitename' placeholder='mysite.com'/>
+<button class='js-start'>Ping Now</button>
+<p><button class='simplemodal-close'>Cancel</button><span>(or press ESC or click the overlay)</span></p>
+</div>
+</div>
+</div>
+<div id='footer'>
+&copy; <script type="text/javascript">var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a href='http://www.ericmmartin.com/'>Eric Martin</a> | <a href='https://github.com/ericmmartin/simplemodal'>SimpleModal on GitHub</a> | 
+<a href='http://twitter.com/ericmmartin'>@ericmmartin</a> | <a href='http://twitter.com/simplemodal'>@simplemodal</a>
+</div>
+</div>
+<!-- Load JavaScript files -->
+<script type='application/ld+json'></script>
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='js/osx.js'></script>
+<script type='text/javascript' src='js/script.js'></script>
+</body>
+</html>
