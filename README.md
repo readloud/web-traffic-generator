@@ -5,8 +5,9 @@ A quick and dirty HTTP/S "organic" traffic generator.
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>List</summary>
- [TrafficGenerator](/TrafficGenerator/#README.md)</li>
- [Noisy](/noisy/#README.md)</li>
+ [TrafficGenerator](/TrafficGenerator/#README.md)
+  
+ [Noisy](/noisy/#README.md)
 </details>
 
 ## About
