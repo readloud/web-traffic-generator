@@ -4,9 +4,7 @@
 <details>
   <summary>A quick and dirty HTTP/S "organic" traffic generator.</summary>
   
- [TrafficGenerator](/TrafficGenerator/#README.md)
-  
- [Noisy](/noisy/#README.md)
+ [TrafficGenerator](/TrafficGenerator/#README.md) | [Noisy](/noisy/#README.md)
 </details>
 
 ## About
