@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>Edit<small> ( <%= link_to @site, edit_site_path(@site) %> ) </small></h1>
+</div>
+
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><%= link_to 'Sites', sites_path %></li>
+  <li class="active"><%= @site %></li>
+</ol>
+
+<%= render 'form' %>

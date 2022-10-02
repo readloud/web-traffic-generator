@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Listing sites <small> ( <%= link_to 'Create Site', new_site_path %> ) </small></h1>
+</div>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Sites</li>
+</ol>
+
+<table class='table table-striped table-hover'>
+
+<thead>
+    <tr>
+      <th>Code</th>
+      <th>Domain</th>
+      <th>campaign_id</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sites.each do |site| %>
+      <tr>
+        <td><%= site.code %></td>
+        <td><%= site.domain %></td>
+        <td><%= site.campaign_id %></td>
+        <td width=30><%= link_to ' ', edit_site_path(site), class: 'btn btn-default btn-sm glyphicon glyphicon-edit' %></td>
+        <td width=30><%= link_to ' ', site, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm glyphicon glyphicon-remove' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

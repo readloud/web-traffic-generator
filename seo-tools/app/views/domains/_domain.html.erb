@@ -1,0 +1,8 @@
+        <tr>
+            <td><%= domain.url %></td>
+            <td class='<%= domain.status.style.gsub('btn-', '') if domain.status %>'><%= domain.status %></td>
+            <td><%= domain.links_counter %></td>
+            <td width=30><%= link_to ' ', domain, class: 'btn btn-default btn-sm glyphicon glyphicon-eye-open' %></td>
+            <td width=30><%= link_to ' ', edit_domain_path(domain), class: 'btn btn-default btn-sm glyphicon glyphicon-edit' %></td>
+            <td width=30><%= link_to ' ', domain, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm glyphicon glyphicon-remove' %></td>
+        </tr>
