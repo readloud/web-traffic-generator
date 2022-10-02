@@ -7,7 +7,6 @@ A quick and dirty HTTP/S "organic" traffic generator.
   <summary>List</summary>
   
  [TrafficGenerator](/TrafficGenerator/#README.md)
-  
  [Noisy](/noisy/#README.md)
 </details>
 
