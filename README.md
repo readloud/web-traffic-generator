@@ -4,11 +4,9 @@ A quick and dirty HTTP/S "organic" traffic generator.
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Bookmarks</summary>
-  <ul>
-     <li>[TrafficGenerator](/TrafficGenerator/#README.md)</li>
-     <li>[Noisy](/noisy/#README.md)</li>
-  </ul>
+  <summary>List</summary>
+ [TrafficGenerator](/TrafficGenerator/#README.md)</li>
+ [Noisy](/noisy/#README.md)</li>
 </details>
 
 ## About
