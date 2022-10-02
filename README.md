@@ -2,6 +2,15 @@
 
 A quick and dirty HTTP/S "organic" traffic generator.
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Bookmarks</summary>
+  <ul>
+     <li>/TrafficGenerator/#README.md</li>
+     <li>/noisy/#README.md</li>
+  </ul>
+</details>
+
 ## About
 
 Just a simple (poorly written) Python script that aimlessly "browses" the internet by starting at pre-defined `ROOT_URLS` and randomly "clicking" links on pages until the pre-defined `MAX_DEPTH` is met.
