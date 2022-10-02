@@ -6,8 +6,8 @@ A quick and dirty HTTP/S "organic" traffic generator.
 <details>
   <summary>Bookmarks</summary>
   <ul>
-     <li>/TrafficGenerator/#README.md</li>
-     <li>/noisy/#README.md</li>
+     <li>[TrafficGenerator](/TrafficGenerator/#README.md)</li>
+     <li>[Noisy](/noisy/#README.md)</li>
   </ul>
 </details>
 
