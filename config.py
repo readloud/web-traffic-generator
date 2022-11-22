@@ -1,23 +1,23 @@
+from fake_traffic import fake_traffic
 MAX_DEPTH = 10  # maximum click depth
 MIN_DEPTH = 3 # minimum click depth
 MAX_WAIT = 10  # maximum amount of time to wait between HTTP requests
 MIN_WAIT = 5  # minimum amount of time allowed between HTTP requests
-DEBUG = False  # set to True to enable useful console output
+DEBUG = True  # set to True to enable useful console output
 
 # use this single item list to test how a site responds to this crawler
 # be sure to comment out the list below it.
 #ROOT_URLS = ["https:///digg.com/"]
 
 ROOT_URLS = [
-	"https://www.lazada.co.id/",
-    "https://biggo.id/",
-    "https://iprice.co.id/",
-	"http://www.shopee.co.id/",
-	"https://id.aliexpress.com/",
-	"https://best.aliexpress.com/",
-    "https://www.aliexpress.com/",
-    "https://www.yahoo.com",
-    "https://www.google.com",
+    "https://www.lazada.co.id",
+	"https://www.lazada.co.id/shop/hedod/?q=All-Products&from=wangpu&langFlag=id&pageTypeId=2",
+	"https://www.lazada.co.id/shop/dethi-collection/?q=All-Products&from=wangpu&langFlag=id&pageTypeId=2",
+	"https://www.lazada.co.id/shop/outer-simple/?q=All-Products&from=wangpu&langFlag=id&pageTypeId=2",
+	"https://www.lazada.co.id/shop/arestore-17/?q=All-Products&from=wangpu&langFlag=id&pageTypeId=2",
+	"https://www.lazada.co.id/shop/arestore-19/?q=All-Products&from=wangpu&langFlag=id&pageTypeId=2",
+	"https://www.lazada.co.id/shop/degallery/?q=All-Products&from=wangpu&langFlag=id&pageTypeId=2",
+	"https://www.lazada.co.id/shop/degallerie/?q=All-Products&from=wangpu&langFlag=id&pageTypeId=2"
 	]
 
 
@@ -27,7 +27,9 @@ blacklist = [
 	"t.umblr.com", 
 	"messenger.com", 
 	"itunes.apple.com", 
-	"l.facebook.com", 
+    "linkedin.com",
+    "instagram.com",
+	"l.facebook.com",
 	"bit.ly", 
 	"mediawiki", 
 	".css", 
@@ -48,5 +50,5 @@ blacklist = [
 	]  
 
 # must use a valid user agent or sites will hate you
-USER_AGENT = 'Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.5195.136 Mobile Safari/537.36.' \
-	'Mozilla/5.0 (Linux; Android 10; SM-A102U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.5195.136 Mobile Safari/537.36.'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) ' \
+	'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
