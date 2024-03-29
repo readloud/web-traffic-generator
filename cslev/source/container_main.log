@@ -1,0 +1,57 @@
++-------------------------------------------------------------+
+|[01m   Found ENV variables[0m    
+|[01m[93mPATH:[32m /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games[0m
+|[01m[93mSSLKEYLOGFILE:[32m [0m
+|[01m[93mSSLDEBUGFILE:[32m [0m
++-------------------------------------------------------------+
++------------------------------------------------+
+|     [01m Passed Arguments to the Container [0m        |
++------------------------------------------------+
+RESOLVER = [32m[0m
+USE QUIC = [32m[0m
+START = [32m[0m
+END = [32m[0m
+BATCH = [32m[0m
+DOMAIN_LIST = [32m[0m
+META = [32m[0m
+INTF = [32meth0[0m
+WEBPAGE_TIMEOUT = [32m16[0m
+ARCHIVE PATH = [32m/webtraffic_gen/archives[0m
+KEEP_PCAP = [32m[0m
+TSO (TCP SEGMENTATION OFFLOAD) = [32m[0m
++================================================+
+[93mDisabling offloading features...[0mnetlink error: Operation not permitted
+	[93m[FAILED][0m
+	[93mContainer not in privileged mode or required capabilities were not added at startup? (SKIPPING)[0m
+Current dir: 
+/home/svn/Desktop/Github/wtb/source
++-------------------------------------------------------------+
+|[01m   Found ENV variables[0m    
+|[01m[93mPATH:[32m /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin[0m
+|[01m[93mSSLKEYLOGFILE:[32m [0m
+|[01m[93mSSLDEBUGFILE:[32m [0m
++-------------------------------------------------------------+
++------------------------------------------------+
+|     [01m Passed Arguments to the Container [0m        |
++------------------------------------------------+
+RESOLVER = [32m[0m
+USE QUIC = [32m[0m
+START = [32m[0m
+END = [32m[0m
+BATCH = [32m[0m
+DOMAIN_LIST = [32m[0m
+META = [32m[0m
+INTF = [32meth0[0m
+WEBPAGE_TIMEOUT = [32m16[0m
+ARCHIVE PATH = [32m/webtraffic_gen/archives[0m
+KEEP_PCAP = [32m[0m
+TSO (TCP SEGMENTATION OFFLOAD) = [32m[0m
++================================================+
+[93mDisabling offloading features...[0m	[32m[DONE][0m
+Current dir: 
+/home/svn/Desktop/Github/wtb/source
+[93mCompressing data...[0m	[32m[DONE][0m
+[93mRemoving csv files[0m	[32m[DONE][0m
+[93mCopying wt_gen_data___1-5000_20240313_003819.tar.gz to /webtraffic_gen/archives/ [0m	[32m[DONE][0m
+
+

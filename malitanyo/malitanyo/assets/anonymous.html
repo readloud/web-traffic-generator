@@ -1,0 +1,54 @@
+<head>
+<title>Anonymous Philippines</title>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-type'/>
+ <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/> 
+  
+<style>
+* {margin: 0; padding: 0;}
+body {background: none;width:100%;}
+canvas {width:100%;background:none;display: blue;}
+
+
+</style>
+<body>
+<canvas id="c"></canvas>
+
+
+
+<script>
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+var chinese = "001100101100";
+chinese = chinese.split("");
+
+var font_size = 6;
+var columns = c.width/font_size; //number of columns for the rain
+//an array of drops - one per column
+var drops = [];
+//1 = y co-ordinate of the drop(same for every drop initially)
+for(var x = 0; x < columns; x++)
+	drops[x] = 1; 
+function draw()
+{
+	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+	ctx.fillRect(0, 0, c.width, c.height);
+
+ctx.fillStyle = "yellow"; //green text
+	ctx.font = font_size + "px arial";
+	//looping over drops
+	for(var i = 0; i < drops.length; i++)
+	{
+		var text = chinese[Math.floor(Math.random()*chinese.length)];
+		//x = i*font_size, y = value of drops[i]*font_size
+		ctx.fillText(text, i*font_size, drops[i]*font_size);
+		if(drops[i]*font_size > c.height && Math.random() > 0.880)
+			drops[i] = 0;
+		drops[i]++;
+	}
+}
+setInterval(draw, 59);
+</script>
+
+</body></html>

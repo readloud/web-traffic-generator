@@ -1,0 +1,111 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: AndroidManifest.xml
+SHA1-Digest: OiufBCcw/KiMH9A19gRCxZLy+kM=
+
+Name: assets/anonymous.html
+SHA1-Digest: 20PAHaSfSQ579fHFC3g+yfpuIlU=
+
+Name: classes.dex
+SHA1-Digest: /pk9o9UTzIrEItjmw0QLru09D+Q=
+
+Name: res/drawable-hdpi-v4/anon.png
+SHA1-Digest: es/6Zmnfk7Py4ajqLRZwsODSoyM=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA1-Digest: aCcwesZzhyhSq0/XfihWG8nWvZU=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA1-Digest: aCcwesZzhyhSq0/XfihWG8nWvZU=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA1-Digest: aCcwesZzhyhSq0/XfihWG8nWvZU=
+
+Name: res/drawable-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: aCcwesZzhyhSq0/XfihWG8nWvZU=
+
+Name: res/drawable/anon.png
+SHA1-Digest: es/6Zmnfk7Py4ajqLRZwsODSoyM=
+
+Name: res/drawable/bg_tools.xml
+SHA1-Digest: dtEdROZeBlLt/ifVRysHRHbAFgA=
+
+Name: res/drawable/bgme.xml
+SHA1-Digest: aa7vIKVB+S8GohIBGJeNFNdgYQA=
+
+Name: res/drawable/donate_bitcoin.png
+SHA1-Digest: Vnz0S5/CE8QWWTQtLf7TRqFfSo4=
+
+Name: res/drawable/donate_paypal.png
+SHA1-Digest: NRpurnZytvEHx+r5zuOqyXezaf0=
+
+Name: res/drawable/error.html
+SHA1-Digest: FIpWK8ocDn7PeY3gN+s2PixGSgE=
+
+Name: res/drawable/ic_right_32.png
+SHA1-Digest: dCFR7OEXu/UqyCZs8DDvx2XM7As=
+
+Name: res/drawable/ic_top.png
+SHA1-Digest: j1WaAseelmP1fMmbJ020Hoexpho=
+
+Name: res/drawable/load.gif
+SHA1-Digest: kcUJVX34BtUwRpIwyv8mDCTGfTo=
+
+Name: res/drawable/malita.png
+SHA1-Digest: sq0NvJX+TgUTpP6tC+bGJKeVhMI=
+
+Name: res/drawable/malitanyo_logo.png
+SHA1-Digest: TS/HigyoIqq1ZqxeXCHVnUhOp1A=
+
+Name: res/drawable/more.png
+SHA1-Digest: 8d1zYTmCJi/7LwO1TAd+63eRHJY=
+
+Name: res/drawable/new_click.xml
+SHA1-Digest: VDMcrcNE1x5qhZdPzsrIvgWljXQ=
+
+Name: res/drawable/new_stp.xml
+SHA1-Digest: zVdhdjq5llMUlDyTDU5yXEavqf8=
+
+Name: res/drawable/pad.html
+SHA1-Digest: Mc4/BEUKsUZSrRZJm02ArRHAGvE=
+
+Name: res/drawable/prog.xml
+SHA1-Digest: ghoWydqvZ5bwkqMrHdaec4tdU/g=
+
+Name: res/drawable/stop.png
+SHA1-Digest: al7Mhf2NDs8eA4T40wrXxOiqb1Y=
+
+Name: res/drawable/time.png
+SHA1-Digest: ENdmalTX6RA8Mi1uYpsLdRcs9ME=
+
+Name: res/drawable/time_brow.png
+SHA1-Digest: PWdArLrqrCVemfH42Ci733kXcrc=
+
+Name: res/drawable/time_setting.png
+SHA1-Digest: tz/TlsxBVgPOFuVEVqXAh+1X2J4=
+
+Name: res/drawable/web.png
+SHA1-Digest: vzVNDtmGcFCr7pWjTt2WBhMcFF4=
+
+Name: res/layout/donatex.xml
+SHA1-Digest: 3akvk3+nmFhS+556KkdDgQiDIPA=
+
+Name: res/layout/info_bot.xml
+SHA1-Digest: 02my9SNvgiM4ekEYeK6OhZV7nZY=
+
+Name: res/layout/main.xml
+SHA1-Digest: Ay/b/y7wbWOqdgjnbeE9N13eCt4=
+
+Name: res/layout/more_appx.xml
+SHA1-Digest: /vr4KwCWzz1giDjgjH+6ghuGtow=
+
+Name: res/layout/multi.xml
+SHA1-Digest: Zcx1gm/up+/jKxTvlPzyPBPJ5k4=
+
+Name: res/layout/single.xml
+SHA1-Digest: uHwusI8qPCD0XhWiFh/DrPuIE3k=
+
+Name: resources.arsc
+SHA1-Digest: GArL6LefuVV6MFF/kV7Pcc6wIEk=
+

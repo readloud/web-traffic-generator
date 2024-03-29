@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="lay01" />
+    <item type="id" name="tit" />
+    <item type="id" name="shit" />
+    <item type="id" name="web" />
+    <item type="id" name="malitanyo" />
+    <item type="id" name="edi1" />
+    <item type="id" name="inter1" />
+    <item type="id" name="inter2" />
+    <item type="id" name="switch01" />
+    <item type="id" name="switch02" />
+    <item type="id" name="but01" />
+    <item type="id" name="but03" />
+    <item type="id" name="but08" />
+    <item type="id" name="but04" />
+    <item type="id" name="but05" />
+    <item type="id" name="but06" />
+    <item type="id" name="but07" />
+    <item type="id" name="webView" />
+    <item type="id" name="webnon" />
+    <item type="id" name="tx01" />
+    <item type="id" name="tx02" />
+    <item type="id" name="tx03" />
+    <item type="id" name="tx04" />
+    <item type="id" name="x01" />
+    <item type="id" name="Bar1" />
+    <item type="id" name="Bar2" />
+    <item type="id" name="Bar3" />
+    <item type="id" name="Bar4" />
+    <item type="id" name="stop" />
+    <item type="id" name="webprev" />
+    <item type="id" name="webad" />
+    <item type="id" name="web02" />
+    <item type="id" name="web03" />
+    <item type="id" name="web04" />
+    <item type="id" name="interval" />
+    <item type="id" name="lim" />
+    <item type="id" name="progressBar" />
+    <item type="id" name="xds" />
+</resources>

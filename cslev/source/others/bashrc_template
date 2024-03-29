@@ -1,0 +1,53 @@
+alias agi='apt-get install'
+alias agu='apt-get update'
+alias agdu='apt-get dist-upgrade'
+alias aguu='apt-get upgrade'
+alias agr='apt-get remove'
+alias agar='apt-get autoremove'
+alias acs='apt-cache search'
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+declare -A colors
+colors=(
+		[1]="\033[1;93m"
+		[2]="\033[1;34m"
+		[3]="\033[1;35m"
+		[4]="\033[1;36m"
+		[5]="\033[1;37m"
+		[6]="\033[1;94m"
+       )
+num_of_colors=${#colors[@]}
+rnd_color=$(( $RANDOM % $num_of_colors +1 ))
+hcolor=$(echo -e ${colors[${rnd_color}]})
+
+
+#env variable can be set via docker run -e NAME=[NAME]!
+NAME=$QUIC_DOH_DOCKER_NAME #read from env variable
+if [ -z $NAME ]
+then
+  #if env. var not set, use default
+  N="Docker"
+else
+  #otherwise, use the set one
+  N=$NAME
+fi
+
+case $TERM in
+        xterm*|rxvt|Eterm|eterm|cygwin)
+PS1='\[\033[1m\]\[${hcolor}\][DoH_${N}]\[\033[38;5;78m\]${debian_chroot:+($debian_chroot)} \[\033[01;31m\]\u \[\033[38;5;78m\]\w\$\[\033[00m\] '
+
+        ;;
+esac
+
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
+
+#for the geckodriver
+export PATH=$PATH:/quic_doh_project/
+#for firefox
+export PATH=$PATH:/quic_doh_project/firefox
+
+#exporting SSL related ENV variables for firefox
+export SSLKEYLOGFILE=/quic_doh_project/ssl-key.log
+export SSLDEBUGFILE=/quic_doh_project/ssl-debug.log

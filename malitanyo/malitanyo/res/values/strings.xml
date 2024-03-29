@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Web Traffic Bot Paid</string>
+    <string name="mal01">"To stop the traffic bot generating please click the 
+"<font color="red">Stop Web Traffic Bot</font>"
+button."</string>
+    <string name="mal02">"Web Traffic Bot Paid is app that can generate free traffic in your blog/website, Fast and easy to use ads free
+
+FEATURES:
+→ 10,000k Unique Random User Agent
+→ 5,000 Unique Random Reffering Url
+→ Enable/Dis Able Popup Ads in the Target Url
+→ Single Task [For Slow Connection]
+→ Multi Task [Super Fast Generator]
+
+NOTE:
+Web Traffic Bot Paid Dont Have features that can change the IP address. This Bot not Work some secure website
+"</string>
+    <string name="mal03">"MAX LIMIT VIEWS REACH!.
+
+Dear user the max limit has been reach now. The Web Traffic Bot is automatic stop generating if you want to continue. please click the STOP Buttom and generate again!
+
+You can set the max limit views in setting"</string>
+    <string name="mal04">Enter the Target url here</string>
+    <string name="mal_version">©2017-2018 Malitanyo WebTrafficBotPaid v.3</string>
+    <string name="donate2">"
+Any amount will accepted.
+
+Regards:
+Developer."</string>
+    <string name="donatex">If you like our apps and you want to give small amount to the developer please use this following info to send your donation.</string>
+</resources>
