@@ -1,0 +1,334 @@
+version: '3.6'
+
+services:
+  quic1:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_1  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_1/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_1/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_1'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_1' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic2:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_2  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_2/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_2/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_2'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_2' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic3:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_3  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_3/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_3/pcap:/quic_doh_project/pcap:rw'
+      - './source/domain_lists:/quic_doh_project/domain_lists:ro'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_3'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: '/quic_doh_project/domain_lists/top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_3' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic4:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_4  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_4/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_4/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_4'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_4' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic5:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_5  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_5/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_5/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_5'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_5' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic6:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_6  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_6/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_6/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_6'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_6' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic7:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_7  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_7/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_7/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_7'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_7' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic8:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_8  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_8/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_8/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_8'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_8' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic9:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_9  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_9/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_9/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_9'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_9' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+
+  quic10:
+    image: 'cslev/quic_doh_docker:latest'
+    container_name: quic_docker_10  #rename according to you scenario for easier identification
+
+    volumes:
+      #proper timing within the host system
+      - '/etc/localtime:/etc/localtime:ro'
+      - './container_data/QUIC_DOH_10/archives:/quic_doh_project/archives:rw'
+      #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
+      - './container_data/QUIC_DOH_10/pcap:/quic_doh_project/pcap:rw'
+    dns: 1.1.1.1
+    shm_size: '4g'
+
+    environment:
+      QUIC_DOH_DOCKER_NAME: 'QUIC_DOH_10'  #should be same as container_name
+      QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
+      QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
+      QUIC_DOH_DOCKER_END: '1000' #last domain to visit in the domain list
+      QUIC_DOH_DOCKER_BATCH: '200' #how many domains to visit within a batch (don't change unless you know what you are doing)
+      QUIC_DOH_DOCKER_INTF: 'eth0' #change this if your container would not have eth0 as a default interface
+      QUIC_DOH_DOCKER_DOMAIN_LIST: 'top-1m_tranco2021.csv' #the relative path inside the container pointing to the list of domains to visit (in Alexa list style: id, domain <-one each line)
+      QUIC_DOH_DOCKER_META: 'cloudlabs_utah_intel64_quic_no_doh_10' #any meta info to affix your final output files for easier identification
+      QUIC_DOH_DOCKER_WEBPAGE_TIMEOUT: '20' #how many seconds we wait for a website to load before throwing timeout error and skip
+      QUIC_DOH_DOCKER_ARCHIVE_PATH: '/quic_doh_project/archives' #where to store the compressed output. Should be the same as defined by the 'volume'
+      QUIC_DOH_DOCKER_USE_QUIC: '1' #set it to 1 to enable Quic or 0 to disable
+      QUIC_DOH_DOCKER_KEEP_PCAP: '0' #DEBUG ONLY: pcap files can consume all your free space, Set it to 1 to keep pcap and 0 otherwise
+      QUIC_DOH_DOCKER_TSO_ON: '0' #Disabled by default as we don't want the NIC to buffer and concatenate fragmented packets that result in jumbo frames. We want packets not greater than 1500B
+
+    cap_add: #in order to disable offloading if required - does not do any harm if left here as it is
+      - NET_ADMIN
+      - NET_BROADCAST
+      - SYS_RESOURCE
+

@@ -1,1 +1,6 @@
+.env
+.vscode/
+/venv
+*/node_modules
+__pycache__
 container_data/

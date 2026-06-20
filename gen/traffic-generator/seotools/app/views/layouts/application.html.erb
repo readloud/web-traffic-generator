@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SeoTool</title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">SeoTool</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <% if current_user %>
+              <ul class="nav navbar-nav">
+                <li><%= link_to 'Networks', subnets_path %></li>
+                <li><%= link_to 'Domains', domains_path %></li>
+                <li><%= link_to 'Urls', urls_path %></li>
+                <li><%= link_to 'Stats', stats_path %></li>
+              </ul>
+          <% end %>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <%= current_user %> <img src='<%= current_user_image %>' width='20' height='20'> <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li role="presentation" class="dropdown-header">Configuration</li>
+                    <li><%= link_to 'Domain status', statuses_path %></li>
+                    <li><%= link_to 'Sites', sites_path %></li>
+                    <li role="presentation" class="divider"></li>
+                    <li><%= link_to 'Sign out', 'sign_out' %></li>
+                  </ul>
+                </li>
+            <% else %>
+                <li><%= link_to 'Sign in', urls_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <div class="container" style='margin-top: 80px'>
+      <% if flash[:auth_error] %>
+          <div class="alert alert-warning"><%= flash[:auth_error] %></div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+
+
+</body>
+</html>

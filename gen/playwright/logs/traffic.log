@@ -1,0 +1,234 @@
+2026-06-20 05:42:17,253 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 05:42:24,258 - __main__ - ERROR - ❌ Fatal error: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-20 05:46:26,261 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 05:46:34,228 - __main__ - ERROR - ❌ Fatal error: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-20 05:51:35,914 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 05:51:40,905 - __main__ - ERROR - ❌ Fatal error: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-20 05:57:45,448 - __main__ - INFO - ✅ Created database file: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.db
+2026-06-20 05:57:45,450 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 05:57:45,454 - __main__ - INFO - 📁 Database path: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.db
+2026-06-20 05:57:45,457 - __main__ - INFO - 📁 Log file: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.log
+2026-06-20 05:57:50,808 - __main__ - INFO - ✅ Application created
+2026-06-20 05:57:50,829 - __main__ - INFO - 📊 Stats update thread started
+2026-06-20 05:57:51,077 - __main__ - INFO - 🚀 Starting server on port 5000
+2026-06-20 05:57:51,098 - __main__ - INFO - 🌐 Dashboard: http://localhost:5000
+2026-06-20 05:57:51,123 - __main__ - INFO - Press Ctrl+C to stop
+2026-06-20 05:58:08,969 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask_cors\extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                                                    ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\app\dashboard\routes.py", line 34, in index
+    return render_template('index.html')
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2026-06-20 05:58:25,055 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask_cors\extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                                                    ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\app\dashboard\routes.py", line 34, in index
+    return render_template('index.html')
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2026-06-20 06:03:01,015 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 06:03:01,018 - __main__ - INFO - 📁 Database path: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.db
+2026-06-20 06:03:01,021 - __main__ - INFO - 📁 Log file: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.log
+2026-06-20 06:03:06,307 - __main__ - INFO - ✅ Application created
+2026-06-20 06:03:06,348 - __main__ - INFO - 📊 Stats update thread started
+2026-06-20 06:03:06,607 - __main__ - INFO - 🚀 Starting server on port 5000
+2026-06-20 06:03:06,627 - __main__ - INFO - 🌐 Dashboard: http://localhost:5000
+2026-06-20 06:03:06,660 - __main__ - INFO - Press Ctrl+C to stop
+2026-06-20 06:03:25,205 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask_cors\extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                                                    ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\app\dashboard\routes.py", line 34, in index
+    return render_template('index.html')
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2026-06-20 06:06:13,202 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask_cors\extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                                                    ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\app\dashboard\routes.py", line 34, in index
+    try:
+    
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2026-06-20 06:06:16,122 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask_cors\extension.py", line 206, in wrapped_function
+    return cors_after_request(app_any.make_response(f(*args, **kwargs)))
+                                                    ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\app\dashboard\routes.py", line 34, in index
+    try:
+    
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 66, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svn\Downloads\traffic-generator\flask\venv\Lib\site-packages\flask\templating.py", line 100, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2026-06-20 06:06:29,593 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 06:06:29,594 - __main__ - INFO - 📁 Database path: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.db
+2026-06-20 06:06:29,600 - __main__ - INFO - 📁 Log file: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.log
+2026-06-20 06:06:35,292 - __main__ - INFO - ✅ Application created
+2026-06-20 06:06:35,314 - __main__ - INFO - 📊 Stats update thread started
+2026-06-20 06:06:35,329 - __main__ - INFO - 🚀 Starting server on port 5000
+2026-06-20 06:06:35,584 - __main__ - INFO - 🌐 Dashboard: http://localhost:5000
+2026-06-20 06:06:35,617 - __main__ - INFO - Press Ctrl+C to stop
+2026-06-20 06:06:43,412 - app.dashboard.routes - ERROR - Error rendering template: index.html
+2026-06-20 06:06:45,515 - app.dashboard.routes - ERROR - Error rendering template: index.html
+2026-06-20 06:09:43,328 - app.dashboard.routes - ERROR - Error rendering template: index.html
+2026-06-20 06:09:44,810 - app.dashboard.routes - ERROR - Error rendering template: index.html
+2026-06-20 06:09:45,978 - app.dashboard.routes - ERROR - Error rendering template: index.html
+2026-06-20 06:12:04,612 - app.dashboard.routes - ERROR - Error rendering template: index.html
+2026-06-20 06:12:05,911 - app.dashboard.routes - ERROR - Error rendering template: index.html
+2026-06-20 06:12:20,612 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 06:12:20,614 - __main__ - INFO - 📁 Database path: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.db
+2026-06-20 06:12:20,618 - __main__ - INFO - 📁 Log file: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.log
+2026-06-20 06:12:34,987 - __main__ - INFO - ✅ Application created
+2026-06-20 06:12:35,005 - __main__ - INFO - 📊 Stats update thread started
+2026-06-20 06:12:35,018 - __main__ - INFO - 🚀 Starting server on port 5000
+2026-06-20 06:12:35,318 - __main__ - INFO - 🌐 Dashboard: http://localhost:5000
+2026-06-20 06:12:35,362 - __main__ - INFO - Press Ctrl+C to stop
+2026-06-20 06:22:24,270 - __main__ - INFO - 📁 Environment setup complete
+2026-06-20 06:22:24,273 - __main__ - INFO - 📁 Database path: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.db
+2026-06-20 06:22:24,276 - __main__ - INFO - 📁 Log file: C:\Users\svn\Downloads\traffic-generator\flask\logs\traffic.log
+2026-06-20 06:22:29,567 - __main__ - INFO - ✅ Application created
+2026-06-20 06:22:29,589 - __main__ - INFO - 📊 Stats update thread started
+2026-06-20 06:22:29,912 - __main__ - INFO - 🚀 Starting server on port 5000
+2026-06-20 06:22:29,918 - __main__ - INFO - 🌐 Dashboard: http://localhost:5000
+2026-06-20 06:22:29,946 - __main__ - INFO - Press Ctrl+C to stop

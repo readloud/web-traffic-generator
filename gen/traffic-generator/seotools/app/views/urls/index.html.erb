@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Listing urls <small> ( <%= link_to 'Create Url', new_url_path %> ) </small></h1>
+  <div class='pull-right' style='margin-top:-30px'>
+      <%= form_tag urls_path, method: 'get', class: 'form-inline' do %>
+        <div class="form-group"><%= text_field_tag :search, params[:search], class: 'form-control' %></div>
+        <div class="form-group"><%= submit_tag "Search", :name => nil, class: 'btn' %></div>
+      <% end %>
+  </div>
+</div>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Urls</li>
+</ol>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th class="col-md-5">Url</th>
+      <th class="col-md-1">DA</th>
+      <th class="col-md-1">PA</th>
+      <th class="col-md-1">Int L</th>
+      <th class="col-md-1">Ext L</th>
+      <th class="col-md-2">Last Visit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= link_to url.url, url.url, target: '_blank' %></td>
+        <td><%= url.domain_authority.to_i.round(2) %></td>
+        <td><%= url.page_authority.to_i.round(2) %></td>
+        <td><%= url.internal_links %></td>
+        <td><%= url.external_links %></td>
+        <td><%= url.visited_at or 'Never' %></td>
+        <td width=30><%= link_to ' ', url, class: 'btn btn-default btn-sm glyphicon glyphicon-eye-open' %></td>
+        <td width=30><%= link_to ' ', edit_url_path(url), class: 'btn btn-default btn-sm glyphicon glyphicon-edit' %></td>
+        <td width=30><%= link_to ' ', url, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm glyphicon glyphicon-remove' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @urls %>

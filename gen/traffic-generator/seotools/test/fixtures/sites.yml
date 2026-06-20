@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: MyString
+  domain: MyString
+  campaign_id: MyString
+
+two:
+  code: MyString
+  domain: MyString
+  campaign_id: MyString

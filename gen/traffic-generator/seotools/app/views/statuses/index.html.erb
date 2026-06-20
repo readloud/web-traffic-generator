@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>Listing status <small> ( <%= link_to 'Create Status', new_status_path %> ) </small></h1>
+</div>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Status</li>
+</ol>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= status.name %></td>
+        <td width=30><%= link_to ' ', edit_status_path(status), class: 'btn btn-default btn-sm glyphicon glyphicon-edit' %></td>
+        <td width=30><%= link_to ' ', status, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm glyphicon glyphicon-remove' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

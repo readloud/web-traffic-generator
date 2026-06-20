@@ -1,0 +1,31 @@
+<%= form_for(@domain) do |f| %>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <% if @domain.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(@domain.errors.count, "error") %> prohibited this site from being saved:</h2>
+
+                    <ul>
+                        <% @domain.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <div class="field">
+                <%= f.label :url %><br>
+                <%= f.text_field :url, class: 'form-control' %>
+            </div>
+            <div class="field">
+                <%= f.label :status %><br>
+                <%= collection_select(:url, :status_id, Status.all, :id, :name, {}, { class: 'form-control' }) %>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <%= f.submit class: 'btn pull-right btn-primary' %>
+        </div>
+    </div>
+
+<% end %>

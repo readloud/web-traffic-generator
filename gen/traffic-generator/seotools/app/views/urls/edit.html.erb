@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>Edit<small> ( <%= link_to @url.url, edit_url_path(@url) %> ) </small></h1>
+</div>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><%= link_to 'Urls', urls_path %></li>
+  <li class="active"><%= @url.url %></li>
+</ol>
+
+<%= render 'form' %>
+

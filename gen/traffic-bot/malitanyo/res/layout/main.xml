@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <WebView android:id="@id/web" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentBottom="true" />
+    <ImageView android:id="@id/malitanyo" android:layout_width="200.0dip" android:layout_height="200.0dip" android:layout_margin="5.0dip" android:src="@drawable/malitanyo_logo" android:layout_centerInParent="true" />
+    <LinearLayout android:orientation="vertical" android:id="@id/lay01" android:background="@drawable/bgme" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:layout_centerInParent="true">
+        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:src="@drawable/ic_top" />
+        <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:background="@drawable/bg_tools" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="0.0dip" android:layout_centerInParent="true">
+                    <EditText android:textSize="15.0sp" android:textColor="#ff5a80d4" android:textColorHighlight="#ff5fb1d4" android:textColorHint="#ff577eec" android:gravity="center|left" android:id="@id/edi1" android:background="#ffd6d6d6" android:paddingLeft="3.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="34.0dip" android:layout_margin="2.0dip" android:hint="@string/mal04" android:drawableLeft="@drawable/time_brow" android:layout_weight="1.0" />
+                    <TextView android:textSize="10.0sp" android:textStyle="bold" android:textColor="#ff3e93ea" android:gravity="center|left" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="TRAFFIC BOT SETTINGS" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="TIME INTERVAL" android:layout_weight="1.0" />
+                        <EditText android:textSize="15.0sp" android:typeface="monospace" android:textColor="#ff5a80d4" android:textColorHighlight="#ff5fb1d4" android:textColorHint="#ff577eec" android:gravity="center|left" android:id="@id/inter1" android:background="#ffffffff" android:paddingLeft="3.0dip" android:focusable="true" android:layout_width="0.0dip" android:layout_height="28.0dip" android:layout_margin="2.0dip" android:hint="" android:drawableLeft="@drawable/time_setting" android:layout_weight="1.0" android:inputType="number" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="MAX LIMIT VIEWS" android:layout_weight="1.0" />
+                        <EditText android:textSize="15.0sp" android:typeface="monospace" android:textColor="#ff5a80d4" android:textColorHighlight="#ff5fb1d4" android:textColorHint="#ff577eec" android:gravity="center|left" android:id="@id/inter2" android:background="#ffffffff" android:paddingLeft="3.0dip" android:focusable="true" android:layout_width="0.0dip" android:layout_height="28.0dip" android:layout_margin="2.0dip" android:hint="" android:drawableLeft="@drawable/time_setting" android:layout_weight="1.0" android:inputType="number" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="ENABLE POPUP-WINDOWS" android:layout_weight="1.0" />
+                        <Switch android:layout_gravity="center|right" android:id="@id/switch01" android:background="#ffffffff" android:layout_width="70.0dip" android:layout_height="wrap_content" android:layout_margin="2.0dip" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="ENABLE JAVASCRIPT" android:layout_weight="1.0" />
+                        <Switch android:layout_gravity="center|right" android:id="@id/switch02" android:background="#ffffffff" android:layout_width="70.0dip" android:layout_height="wrap_content" android:layout_margin="2.0dip" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+                        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ff4b8fba" android:id="@id/but01" android:background="@drawable/new_click" android:layout_width="0.0dip" android:layout_height="32.0dip" android:layout_margin="2.0dip" android:text="START TRAFFIC BOT GENERATE" android:drawableRight="@drawable/ic_right_32" android:layout_weight="1.0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <HorizontalScrollView android:layout_gravity="bottom" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="32.0dip" android:layout_marginTop="10.0dip">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/lay01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#f9f8f819" android:id="@id/but03" android:background="@drawable/new_click" android:layout_width="100.0dip" android:layout_height="32.0dip" android:layout_margin="2.0dip" android:text="Read me" />
+                        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#f9f8f819" android:id="@id/but08" android:background="@drawable/new_click" android:layout_width="100.0dip" android:layout_height="32.0dip" android:layout_margin="2.0dip" android:text="Donate" />
+                        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#f9f8f819" android:id="@id/but04" android:background="@drawable/new_click" android:layout_width="100.0dip" android:layout_height="32.0dip" android:layout_margin="2.0dip" android:text="Contact" />
+                        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#f9f8f819" android:id="@id/but05" android:background="@drawable/new_click" android:layout_width="100.0dip" android:layout_height="32.0dip" android:layout_margin="2.0dip" android:text="Share" />
+                        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#f9f8f819" android:id="@id/but06" android:background="@drawable/new_click" android:layout_width="100.0dip" android:layout_height="32.0dip" android:layout_margin="2.0dip" android:text="Website" />
+                        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#f9f8f819" android:id="@id/but07" android:background="@drawable/new_click" android:layout_width="100.0dip" android:layout_height="32.0dip" android:layout_margin="2.0dip" android:text="More Apps" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+                <TextView android:textSize="10.0sp" android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/mal_version" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

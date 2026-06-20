@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: one
+  day: 2013-01-01
+  number: 100
+
+two:
+  status: two
+  day: 2013-01-01
+  number: 200

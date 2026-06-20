@@ -1,0 +1,15 @@
+{
+  "config": [
+    {
+      "count": 5000,
+      "time_interval": 10,
+      "url": "https://readloud.github.io/"
+    },
+    {
+      "count": 10000,
+      "time_interval": 20,
+      "url": "https://readloud.github.io/"
+    }
+  ],
+  "weekend_rest": true
+}

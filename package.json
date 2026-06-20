@@ -1,0 +1,36 @@
+{
+  "name": "organic-traffic-generator",
+  "version": "1.0.0",
+  "description": "Advanced organic traffic generator with anti-detection",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dashboard": "node src/dashboard/server.js",
+    "scheduler": "node src/scheduler/scheduler.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.10.0",
+    "faker": "^5.5.3",
+    "ghoster": "^1.0.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "node-cron": "^4.4.1",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1",
+    "uuid": "^14.0.0",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "allowScripts": {
+    "sqlite3@6.0.1": true
+  }
+}

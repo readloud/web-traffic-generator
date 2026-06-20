@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>full</id>
+    <!-- 最终打包成一个用于发布的zip文件 -->
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <!-- 把依赖jar包打包进Zip压缩文件的lib目录下 -->
+    <dependencySets>
+        <dependencySet>
+            <!--不使用项目的artifact，第三方jar不要解压，打包进zip文件的lib目录-->
+            <useProjectArtifact>false</useProjectArtifact>
+            <!-- 第三方jar打包进Zip文件的lib目录下， -->
+            <!-- 注意此目录要与maven-jar-plugin中classpathPrefix指定的目录相同, -->
+            <!-- 不然这些依赖的jar包加载到ClassPath的时候会找不到-->
+            <outputDirectory>lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+
+    <!-- 文件设置，你想把哪些文件包含进去，或者把某些文件排除掉，都是在这里配置-->
+    <fileSets>
+        <!-- 把项目自己编译出来的可执行jar，打包进zip文件的根目录 -->
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory></directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>README.txt</include>
+                <include>config.json</include>
+                <include>start.bat</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

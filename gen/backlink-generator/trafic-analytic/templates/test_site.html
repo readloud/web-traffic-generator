@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Site - Traffic Analytics</title>
+</head>
+<body>
+    <h1>Test Website with Traffic Tracking</h1>
+    <p>This page includes the tracking script.</p>
+    
+    <!-- Tracking Script -->
+    <script>
+    (function() {
+        var site_id = 'test_site_001';
+        var script = document.createElement('script');
+        script.src = 'http://traffic.local/track.php?site_id=' + site_id + '&url=' + encodeURIComponent(window.location.href);
+        script.async = true;
+        document.body.appendChild(script);
+        
+        console.log('Traffic Analytics tracking loaded for site:', site_id);
+    })();
+    </script>
+    
+    <p>Open browser console to see tracking messages.</p>
+    <p><a href="admin.php">View Dashboard</a></p>
+</body>
+</html>

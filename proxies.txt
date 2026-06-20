@@ -1,0 +1,12 @@
+# HTTP Proxies
+http://user:pass@192.168.1.100:8080
+http://192.168.1.101:3128
+http://user:pass@192.168.1.102:8080
+
+# HTTPS Proxies
+https://192.168.1.103:443
+https://user:pass@192.168.1.104:443
+
+# SOCKS5 Proxies
+socks5://192.168.1.105:1080
+socks5://user:pass@192.168.1.106:1080

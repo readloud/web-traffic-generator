@@ -1,0 +1,19 @@
+Flask==2.3.3
+Flask-SocketIO==5.3.4
+Flask-SQLAlchemy==3.1.1
+Flask-CORS==4.0.0
+python-dotenv==1.0.0
+playwright==1.39.0
+playwright-stealth==1.0.6
+faker==19.13.0
+pandas==2.1.3
+python-dateutil==2.8.2
+requests==2.31.0
+APScheduler==3.10.4
+eventlet==0.33.3
+python-engineio==4.7.1
+python-socketio==5.10.0
+sqlalchemy==2.0.23
+# If playwright-stealth doesn't work, try this alternative:
+# playwright-extra==0.4.0
+# puppeteer-extra-plugin-stealth==2.11.2

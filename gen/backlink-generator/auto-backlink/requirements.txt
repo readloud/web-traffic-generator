@@ -1,0 +1,15 @@
+matplotlib==3.7.2
+Flask==2.3.3
+Flask-SQLAlchemy==3.0.5
+Flask-CORS==6.0.0
+requests==2.32.4
+beautifulsoup4==4.12.2
+user-agents==2.2.0
+geoip2==4.7.0
+fake-useragent==1.4.0
+Faker==19.6.2
+schedule==1.2.0
+python-dotenv==1.0.0
+concurrent-log-handler==0.9.24
+apscheduler==3.10.4
+pandas==2.0.3

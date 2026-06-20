@@ -1,0 +1,56 @@
+<div class="page-header">
+    <h1>View domain
+        <small> ( <%= link_to @domain.url, edit_domain_path(@domain) %> )</small>
+    </h1>
+</div>
+
+
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><%= link_to 'Domains', domains_path %></li>
+    <li class="active"><%= @domain %></li>
+    <% if @next_domain %>
+    <li class='pull-right'><a href='<%= url_for domain_url(@next_domain) %>'>Next &rsaquo;</a></li>
+    <% end %>
+</ol>
+
+<p>
+<div class="panel-footer">
+  <% if @domain.status %>
+  <div class='pull-left'>
+    <h4><small>Current status :</small> <span class='label <%= @domain.status.style.gsub('btn-', 'label-') %>'><%= @domain.status.name.capitalize %></span></h4>
+  </div>
+  <% end %>
+  <% @statuses.each do |status| %>
+      <%= form_for @domain, :method => "put" do |f| %>
+          <%= f.hidden_field :status_id, :value => status.id %>
+          <%= f.submit status.name.capitalize, class: "btn pull-right #{status.style}" %>
+      <% end %>
+  <% end %>
+</div>
+
+<table class='table table-striped table-hover'>
+    <thead>
+    <tr>
+        <th>Url</th>
+        <th width=150>Links</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @urls.each do |url| %>
+        <tr>
+            <td><%= link_to url.url, url.url %></td>
+            <td><%= url.links.count %></td>
+            <td width=30><%= link_to ' ', url, class: 'btn btn-default btn-sm glyphicon glyphicon-eye-open' %></td>
+            <td width=30><%= link_to ' ', edit_url_path(url), class: 'btn btn-default btn-sm glyphicon glyphicon-edit' %></td>
+            <td width=30><%= link_to ' ', url, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm glyphicon glyphicon-remove' %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+</p>
+
+<%= paginate @urls %>

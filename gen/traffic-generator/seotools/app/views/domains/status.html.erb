@@ -1,0 +1,22 @@
+<div class="page-header">
+    <h1>Update urls's status
+        <small>(<%= @domain.url %>)</small>
+    </h1>
+</div>
+
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><%= link_to 'Domains', domains_path %></li>
+    <li class="active"><%= @domain.url %></li>
+</ol>
+
+<%= form_for(@domain, :url => '') do |f| %>
+    <div class="field">
+        <%= f.label :status %><br>
+        <%= collection_select(:url, :status_id, Status.all, :id, :name, {}, {class: 'form-control'}) %>
+    </div>
+    <div class="panel-footer">
+        <%= f.submit class: 'btn pull-right btn-primary' %>
+    </div>
+
+<% end %>

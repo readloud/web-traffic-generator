@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:orientation="vertical" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <WebView android:id="@id/webnon" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="2.0dip" android:layout_alignParentTop="true" />
+    <LinearLayout android:orientation="vertical" android:id="@id/lay01" android:background="@drawable/bgme" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_centerInParent="true">
+        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:src="@drawable/ic_top" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="19.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_width="140.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="TOTAL REQUEST: " />
+            <TextView android:textSize="15.0sp" android:textColor="#ff55b98e" android:gravity="center|left" android:id="@id/tx01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Loading." />
+        </LinearLayout>
+        <ImageView android:background="#ff50bd8f" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="19.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_width="140.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="TARGET WEBSITE: " />
+            <TextView android:textSize="15.0sp" android:textColor="#ff55b98e" android:ellipsize="marquee" android:gravity="center|left" android:id="@id/tx02" android:paddingLeft="1.0dip" android:paddingRight="1.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Loading..." android:scrollHorizontally="true" android:singleLine="true" android:freezesText="true" android:marqueeRepeatLimit="marquee_forever" />
+        </LinearLayout>
+        <ImageView android:background="#ff50bd8f" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="19.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_width="140.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="USER AGENT: " />
+            <TextView android:textSize="15.0sp" android:textColor="#ff55b98e" android:ellipsize="marquee" android:gravity="center|left" android:id="@id/tx03" android:paddingLeft="1.0dip" android:paddingRight="1.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Loading..." android:scrollHorizontally="true" android:singleLine="true" android:freezesText="true" android:marqueeRepeatLimit="marquee_forever" />
+        </LinearLayout>
+        <ImageView android:background="#ff50bd8f" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="19.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="#fff5f5f5" android:gravity="center|left" android:layout_width="140.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="REFFERING URL: " />
+            <TextView android:textSize="15.0sp" android:textColor="#ff55b98e" android:ellipsize="marquee" android:gravity="center|left" android:id="@id/tx04" android:paddingLeft="1.0dip" android:paddingRight="1.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Loading..." android:scrollHorizontally="true" android:singleLine="true" android:freezesText="true" android:marqueeRepeatLimit="marquee_forever" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/x01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="2.0dip">
+            <ProgressBar android:layout_gravity="center" android:id="@id/Bar1" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginLeft="0.0dip" android:layout_marginRight="1.0dip" android:progressDrawable="@drawable/prog" android:layout_weight="1.0" style="?android:progressBarStyleHorizontal" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/Bar2" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" android:progressDrawable="@drawable/prog" android:layout_weight="1.0" style="?android:progressBarStyleHorizontal" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/Bar3" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" android:progressDrawable="@drawable/prog" android:layout_weight="1.0" style="?android:progressBarStyleHorizontal" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/Bar4" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="0.0dip" android:progressDrawable="@drawable/prog" android:layout_weight="1.0" style="?android:progressBarStyleHorizontal" />
+        </LinearLayout>
+        <Button android:textSize="14.0sp" android:textColor="#ffee463b" android:id="@id/stop" android:background="@drawable/new_stp" android:layout_width="fill_parent" android:layout_height="34.0dip" android:layout_margin="3.0dip" android:text="STOP TRAFFIC BOT | MULTI TASK?" android:drawableRight="@drawable/stop" android:layout_weight="1.0" />
+        <TextView android:textSize="13.0sp" android:textColor="#ff5285ca" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="3.0dip" android:text="TARGET WEBSITE PREVIEWS" />
+        <WebView android:id="@id/webprev" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_margin="2.0dip" />
+        <TextView android:textSize="11.0sp" android:textColor="#ff5285ca" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="3.0dip" android:text="Web Traffic Bot Paid v.1 | MULTI TASK" />
+    </LinearLayout>
+    <WebView android:id="@id/webad" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+    <WebView android:id="@id/web02" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+    <WebView android:id="@id/web03" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+    <WebView android:id="@id/web04" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+</RelativeLayout>

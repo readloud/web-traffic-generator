@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>View site<small> ( <%= link_to @site, edit_site_path(@site) %> ) </small></h1>
+</div>
+
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><%= link_to 'Sites', sites_path %></li>
+  <li class="active"><%= @site %></li>
+</ol>
+
+<p>
+  <strong>Code:</strong>
+  <%= @site.code %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @site.domain %>
+</p>
+
+<p>
+  <strong>campaign_id:</strong>
+  <%= @site.campaign_id %>
+</p>
+
+<%= link_to 'Edit', edit_site_path(@site) %> |
+<%= link_to 'Back', sites_path %>

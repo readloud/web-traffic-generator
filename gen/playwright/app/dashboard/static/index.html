@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Traffic Generator Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>🚀 Organic Traffic Generator</h1>
+            <div class="status">
+                <span id="status-indicator" class="status-offline">● Offline</span>
+                <span id="visit-counter">Visits: 0</span>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="visit-count">Number of Visits:</label>
+                <input type="number" id="visit-count" value="10" min="1" max="100">
+            </div>
+            <div class="control-group">
+                <label for="mode-select">Mode:</label>
+                <select id="mode-select">
+                    <option value="burst">Burst</option>
+                    <option value="continuous">Continuous</option>
+                </select>
+            </div>
+            <button id="start-btn" class="btn btn-primary">▶ Start Traffic</button>
+            <button id="stop-btn" class="btn btn-danger" disabled>⏹ Stop</button>
+            <button id="export-btn" class="btn btn-secondary">📊 Export CSV</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Visits</h3>
+                <p id="total-visits">0</p>
+                <small>Last 24h: <span id="last-24h">0</span></small>
+            </div>
+            <div class="stat-card">
+                <h3>Unique Visitors</h3>
+                <p id="unique-visitors">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Avg Duration</h3>
+                <p id="avg-duration">0s</p>
+            </div>
+            <div class="stat-card">
+                <h3>Bounce Rate</h3>
+                <p id="bounce-rate">0%</p>
+            </div>
+            <div class="stat-card">
+                <h3>Page Depth</h3>
+                <p id="page-depth">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Proxies</h3>
+                <p id="proxy-count">0</p>
+            </div>
+        </div>
+
+        <div class="charts">
+            <div class="chart-container">
+                <h3>Traffic Sources</h3>
+                <canvas id="sources-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Visits Over Time</h3>
+                <canvas id="timeline-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="recent-visits">
+            <h3>Recent Visits</h3>
+            <div class="table-container">
+                <table id="visits-table">
+                    <thead>
+                        <tr>
+                            <th>Session ID</th>
+                            <th>Source</th>
+                            <th>Pages</th>
+                            <th>Duration</th>
+                            <th>Bounce</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="visits-body">
+                        <tr><td colspan="6">Loading visits...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
